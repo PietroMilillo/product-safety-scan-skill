@@ -15,6 +15,8 @@ From the photos, extract:
 - Distributor/importer name + address (often different company, different country)
 - Full ingredient list
 - Any warnings (Prop 65, allergens, "keep refrigerated," etc.)
+
+**Allergen labelling is not the same everywhere, and a US label is the thinnest of the major regimes.** The US requires nine (milk, egg, fish, crustacean shellfish, tree nuts, peanuts, wheat, soy, and sesame since 2023). The EU and UK require fourteen. **The five the US does not require are celery, mustard, sulphites, lupin and molluscs.** If the user's allergy is one of those five, a compliant US label will tell them nothing, and a recall for that allergen in Britain or Australia may be the only signal that exists. Search the brand family in those jurisdictions before telling anyone a product is clear for an allergen outside the US nine.
 - Nutrition panel only if relevant to the user's question (usually skip — not the point of this skill)
 
 If any of this is illegible or cut off across the photos, say so rather than guessing.
@@ -145,7 +147,9 @@ Be explicit about the tradeoffs — e.g. "cleaner ingredients but pricier" or "s
 Lead the summary with one of these three, decided by **worst-finding-wins**: the single worst thing found sets the color, full stop. A red finding is never softened by an otherwise-clean scan, and is never averaged against unrelated positives.
 
 **🔴 RED** — any one of these is sufficient on its own:
-- A confirmed recall, regulatory action, or credible lawsuit tied to *this* manufacturer or distributor specifically (not just the product category in general)
+- A confirmed recall tied to *this* manufacturer, importer or brand family that is **live**: affected stock still inside its best-before dates, or the recall is under twelve months old
+- A recall of any age for a **pathogen or an undeclared allergen**, where the same failure mode plausibly recurs (repeat recalls by the same firm, or repeat failures of the same kind)
+- Regulatory action or a credible lawsuit against *this* manufacturer or distributor specifically (not just the product category in general)
 - Manufacturer or distributor legitimacy doesn't hold up: no findable business registration, no trade/shipment history, an unverifiable entity — especially stacked with a weak contact channel
 - A warning that is specific and unexplained, with no plausible industry-wide cause
 - A regulatory-restricted ingredient (banned or restricted somewhere), as opposed to merely personally-avoided
@@ -156,6 +160,8 @@ Lead the summary with one of these three, decided by **worst-finding-wins**: the
 - A warning is present and turns out to be category-wide rather than specific to this maker (e.g. Prop 65 lead on a chilli product). **Category-wide still means yellow, not green** — the finding is real, it is just not about this firm. Report the measured levels and which thresholds they clear or fail
 - A commodity-and-origin measurement sits above a warning trigger or a foreign ceiling but inside the limit of the market where it is sold, with a published risk assessment below the concern threshold
 - Nobody has measured the commodity from this origin, so the question stays open
+- A **closed** recall older than twelve months whose stock is out of date and which does not form a repeating pattern. Name it, date it, say who conducted it, and say it is closed. Do not hide it and do not treat it as disqualifying
+- A recall of a product carrying this brand but run by a **contract co-packer** rather than the named maker. Report it and attribute it to the co-packer by name; it bears on the brand's supply chain, not on its own plant
 - Minor soft legitimacy flags (address mismatch, personal-email contact, thin search coverage) on top of a business that's otherwise real, with no adverse history
 - Some part of the picture genuinely couldn't be verified either way
 
@@ -163,6 +169,8 @@ Lead the summary with one of these three, decided by **worst-finding-wins**: the
 - No avoid-list ingredients, or nothing beyond something trivial
 - No warnings; or a warning explained as category-wide **and** the commodity measured within every applicable limit
 - Manufacturer and distributor both verifiably legitimate with no adverse findings
+
+**Why 🔴 carries a clock.** Every food company of any size has a recall somewhere in its history. If any recall at any date set red, every mature firm would be red and the colour would carry no information. Recency, severity and repetition are what separate a live hazard from a company that has been operating long enough to have had a bad batch. Say which one you found.
 
 State the verdict and the one worst (or best) finding driving it in the same breath — don't just show a color with no reasoning attached.
 
