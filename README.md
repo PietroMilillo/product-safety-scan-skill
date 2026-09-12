@@ -89,9 +89,14 @@ and which turns out to have 1,364 customs shipments on file going back to 2007. 
 reproductive-harm warning that turned out to be about lead in agricultural soil and to sit
 on most of the imported spice aisle. A half gallon of milk that was just milk.
 
-I wrote about where that left my original suspicion in an essay called *Eight Thousand
-Hectares* on [The AI Prof](https://theaiprof.substack.com). Direct link goes here when it
-publishes.
+I wrote about where that left my original suspicion in
+[*Eight Thousand Hectares*](https://theaiprof.substack.com/p/us-food-additives-eight-thousand-hectares)
+on The AI Prof.
+
+Fact-checking that essay is what produced most of this skill's later revisions: the origin
+step, the threshold comparison, the recency clock on red verdicts, and the note about US
+allergen labelling. Every one of them exists because the first version of the skill got
+something wrong and the checking caught it.
 
 ## Licence
 
