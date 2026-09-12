@@ -34,6 +34,31 @@ openFDA does NOT cover these — check separately when the product is meat/poult
 - `https://www.cpsc.gov/Recalls` has a searchable interface; the underlying open data feed is public domain (per CPSC's own recalls.gov API). Use for anything household/cosmetic-adjacent that isn't strictly food (appliances, personal care devices, children's products).
 - Search by company or product name; read hazard type, remedy, and whether it's a Class action or voluntary recall.
 
+## Non-US recall registers — check these, not only the FDA
+
+A brand can have an empty FDA record and a long history somewhere else. These publish, they are
+free, and they are where sibling-product recalls of the same brand family turn up.
+
+- **FSANZ** (Australia / New Zealand) — `foodstandards.gov.au/food-recalls`. Recall alerts name
+  the recalling importer, the exact product and size, the reason, the affected best-before
+  dates, and where it was sold. Individual alerts have stable URLs.
+- **UK FSA** — allergy alerts carry references of the form `FSA-AA-NN-YYYY`. **The alert pages
+  have been archived and now return HTTP 410 while still appearing in search results.** Cite the
+  reference number if no live page exists.
+- **CFIA** (Canada) — `recalls-rappels.canada.ca`.
+- **Hong Kong CFS** — `cfs.gov.hk`, frequently republishes FSANZ and mainland notices, which
+  makes it a useful second confirmation.
+- **EU RASFF** — the rapid alert portal, plus the published RASFF analyses. Useful for whole
+  commodity categories: the 23-year analysis (Eissa et al., *J. Food Safety*, 2024) ranks the
+  most-notified herbs and spices and their dominant hazards.
+
+**Recency rule.** Search the current year and the previous one by name, not just the brand. Then
+check the recalled batches' best-before dates against today. A recall whose stock is still in
+date is a live hazard, not a historical pattern, and the report must say which it is.
+
+**Link rule.** Open every URL before citing it. Agencies migrate and archive constantly, and a
+search result is not proof a page resolves.
+
 ## OEHHA Prop 65 chemical list
 
 - The authoritative list of chemicals that trigger California's Prop 65 warning is maintained by OEHHA. Check whether a specific ingredient found on a label (e.g. an additive, a heavy metal, a specific dye) is actually on this list before asserting a warning is "about" that ingredient — don't guess from pattern-matching alone if a direct check is feasible.

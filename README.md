@@ -9,6 +9,21 @@ plain language, and returns 🟢 / 🟡 / 🔴 with the single finding that prod
 It tells you what is findable and what it means. It does not certify that anything is safe,
 and it will say so if you ask it to.
 
+## What it checks
+
+- **The label** — ingredients against a list you write, allergens, warnings.
+- **The two companies** — manufacturer and importer are usually different firms in different
+  countries with different records. Searched separately.
+- **Recalls across jurisdictions** — FSANZ, UK FSA, CFIA, Hong Kong CFS and EU RASFF as well as
+  the FDA, for the whole brand family rather than the exact SKU, with a check on whether
+  recalled stock is still inside its best-before dates.
+- **The ground it grew in** — for spices, herbs, tea, rice and other crops that concentrate soil
+  metals, the growing region rather than the head office, and whether anyone has published a
+  measurement of the commodity itself.
+- **The warning, against every threshold that applies** — a Prop 65 exposure trigger, an EU
+  concentration ceiling, the national limit where it grew, and any published risk assessment.
+  These disagree by design, and the disagreement is the finding.
+
 ## The verdict rule
 
 **Worst finding wins.** One confirmed recall sets red. One company you cannot verify sets
@@ -36,6 +51,20 @@ So the skill keeps two kinds of entry apart and reports them differently:
 Software that blurs those two is worse than no software. Write your list before you scan
 anything, because a list assembled while looking at a product you already distrust will
 agree with you.
+
+## A category-wide warning is not nothing
+
+The first version of this skill treated a Prop 65 label as boilerplate once it turned out most
+of the category carried one, and stopped there. That was wrong, and an essay written from its
+output nearly shipped the error.
+
+Most imported chilli products do carry the warning. A 2024 study in *Scientific Reports* also
+measured 130 batches of dried chilli across nine Guizhou prefectures and found mean lead of
+0.89 mg/kg. The EU ceiling for dried *Capsicum* is 0.60. Chinese national limits were exceeded
+in 11% of samples. The authors' hazard quotient came out below 1 everywhere.
+
+Four rules, one chilli, four answers. The skill now reports all four instead of picking the one
+that settles the question. See `references/contaminant-thresholds.md`.
 
 ## Install
 

@@ -1,6 +1,6 @@
 ---
 name: product-safety-scan
-description: Analyze photos of a food, cosmetic, or household product's packaging/label to assess trustworthiness — flags additives on the user's avoid-list, checks the manufacturer and distributor for recalls/lawsuits/regulatory action, weighs country-of-origin and factory-condition risk, explains any warnings in plain language, and can suggest better-vetted alternatives. Use this whenever the user shares photos of a product label, jar, box, or ingredient panel and asks whether it's safe, trustworthy, "sketchy," or how it compares to alternatives — even if they don't name the skill directly. Also trigger on requests like "check this product," "any red flags with this brand," or "is this company okay."
+description: Analyze photos of a food, cosmetic, or household product's packaging/label to assess trustworthiness — flags additives on the user's avoid-list, checks the manufacturer and distributor for recalls/lawsuits/regulatory action, weighs country-of-origin, growing-region contamination and factory-condition risk, explains any warnings in plain language against the thresholds that actually apply, and can suggest better-vetted alternatives. Use this whenever the user shares photos of a product label, jar, box, or ingredient panel and asks whether it's safe, trustworthy, "sketchy," or how it compares to alternatives — even if they don't name the skill directly. Also trigger on requests like "check this product," "any red flags with this brand," or "is this company okay."
 ---
 
 # Product Safety Scan
@@ -49,6 +49,24 @@ Treat a hit from any of these as a sourced, high-confidence finding. Treat a cle
 
 Search separately for the manufacturer and the distributor by name — they're often unrelated companies in different countries with different track records.
 
+Search the **brand family**, not only the exact SKU. A recall of a sibling product by a
+different importer in a different country is a real signal about the maker's labelling and
+process control, and it is the finding most often missed.
+
+**Search the jurisdictions that actually publish recalls, not just the US.** A brand can have a
+clean FDA record and a long history elsewhere:
+
+- **FSANZ** (Australia/NZ) — `foodstandards.gov.au/food-recalls`
+- **UK FSA** — alerts carry a reference like `FSA-AA-32-2025`
+- **CFIA** (Canada) — `recalls-rappels.canada.ca`
+- **Hong Kong CFS** — often republishes FSANZ and mainland notices
+- **EU RASFF** — the EU rapid alert portal
+
+**Check recency explicitly, and check whether affected stock is still in date.** Search the
+current year and the previous one by name. A recall is not history if the recalled batches carry
+best-before dates that have not passed yet — say so, with the date, because that is the
+difference between a pattern and a live hazard.
+
 For each, look for:
 - Confirmed recalls or regulatory action not caught by Step 3 (EU RASFF, other countries' agencies, etc.)
 - Lawsuits, formal complaints, or credible investigative journalism (not forum speculation)
@@ -70,9 +88,48 @@ Beyond news/recall search, check whether the businesses on the label actually ch
 
 Weigh these together rather than any single one alone. A personal-email contact plus a real, multi-year shipment history reads very differently than a personal-email contact plus no findable registration and no shipment history at all.
 
+## Step 3d: Check the ground, not just the company
+
+Run this whenever the product is an agricultural commodity that concentrates soil contaminants:
+spices, herbs, tea, rice, cocoa, roots, leafy greens, seaweed, mushrooms.
+
+See `references/origin-risk.md` for the full procedure. In brief: a legitimacy check answers
+*is this firm real*; it does not answer *what is in the soil where this grew*. A hundred-year-old
+listed company can still be farming a floodplain downstream of a smelter. Locate the growing
+region rather than the head office, find out whether its contamination is industrial or high
+geological background, and then **go looking for a published measurement of the commodity
+itself** rather than stopping at regional soil data.
+
+Before borrowing any study, check its **sample frame** — market, origin, sampling year, commodity
+form. A study only speaks about what it sampled. If it does not match the product in front of
+you, say so and find one that does; do not soften the mismatch into "studies suggest."
+
+**Never infer disease from geography.** Regional illness statistics have their own attributed
+causes. Report what the epidemiology attributes, and never pin it on the product.
+
 ## Step 4: Explain warnings
 
-Translate any on-label warning into plain language: what triggers it, who it's actually relevant to (e.g. pregnant women, people with soy allergies), and whether it's a legal-boilerplate warning (like blanket Prop 65 labels many products carry) versus something specific to this product.
+Translate any on-label warning into plain language: what triggers it, and who it is actually relevant to (pregnant women, people with a soy allergy, and so on).
+
+Then establish whether the warning is specific to this product or carried across its whole
+category — **and do not stop there if it is category-wide.** A category-wide warning is not
+noise. It is weak evidence about the category, and the category is what the product is made of.
+"Most chilli products carry this label" and "there is measurable lead in chilli" are both true,
+and only the second one is informative.
+
+So: find the number. See `references/contaminant-thresholds.md`. Report the measured level, when
+anyone has measured it, against **every threshold that applies** rather than the one that
+supports the conclusion you already reached:
+
+- an exposure-based **warning trigger** (Prop 65 lead: 0.5 µg/day),
+- a hard **concentration ceiling** (EU lead in dried *Capsicum*: 0.60 mg/kg),
+- the **national limit** where it was grown,
+- and any published **risk assessment** (THQ/TTHQ below 1, TCR below 10⁻⁴).
+
+These disagree with each other by design. A product can trigger a Californian warning, fail an
+EU ceiling, pass its home country's limit, and still show a hazard quotient below 1. Report all
+four. Do not collapse them into "safe" or "unsafe," and do not dismiss the warning as boilerplate
+just because it is common.
 
 ## Step 5: Alternatives (only if something was flagged, or the user asks)
 
@@ -90,18 +147,21 @@ Lead the summary with one of these three, decided by **worst-finding-wins**: the
 **🔴 RED** — any one of these is sufficient on its own:
 - A confirmed recall, regulatory action, or credible lawsuit tied to *this* manufacturer or distributor specifically (not just the product category in general)
 - Manufacturer or distributor legitimacy doesn't hold up: no findable business registration, no trade/shipment history, an unverifiable entity — especially stacked with a weak contact channel
-- A warning that is specific and unexplained, with no plausible industry-wide/boilerplate cause
+- A warning that is specific and unexplained, with no plausible industry-wide cause
 - A regulatory-restricted ingredient (banned or restricted somewhere), as opposed to merely personally-avoided
+- A published measurement of this product or its commodity-and-origin **above a hard regulatory ceiling in the market where it is being sold** (not merely above a warning trigger, which is a much lower bar)
 
 **🟡 YELLOW** — none of the above, but:
 - One or more avoid-list ingredients present, though none regulatorily restricted, and the company otherwise checks out
-- A warning is present but explainable as industry-wide/boilerplate (e.g. Prop 65 lead on a chili product) rather than specific to this maker
+- A warning is present and turns out to be category-wide rather than specific to this maker (e.g. Prop 65 lead on a chilli product). **Category-wide still means yellow, not green** — the finding is real, it is just not about this firm. Report the measured levels and which thresholds they clear or fail
+- A commodity-and-origin measurement sits above a warning trigger or a foreign ceiling but inside the limit of the market where it is sold, with a published risk assessment below the concern threshold
+- Nobody has measured the commodity from this origin, so the question stays open
 - Minor soft legitimacy flags (address mismatch, personal-email contact, thin search coverage) on top of a business that's otherwise real, with no adverse history
 - Some part of the picture genuinely couldn't be verified either way
 
 **🟢 GREEN** — none of the above:
 - No avoid-list ingredients, or nothing beyond something trivial
-- No warnings, or a warning fully explained as boilerplate
+- No warnings; or a warning explained as category-wide **and** the commodity measured within every applicable limit
 - Manufacturer and distributor both verifiably legitimate with no adverse findings
 
 State the verdict and the one worst (or best) finding driving it in the same breath — don't just show a color with no reasoning attached.
@@ -122,3 +182,6 @@ Only build a longer structured report/artifact if something is genuinely flagged
 - This skill produces a "here's what's findable and what it means" summary, not a certification of safety. Say so if asked directly.
 - Never invent a recall, lawsuit, or factory incident. If search comes up empty, that's a real (if weaker) finding — report it as such.
 - Distinguish speculation/forum chatter from sourced reporting; don't launder the former as the latter.
+- **Check that every URL you cite actually resolves.** Agencies migrate and archive; a search engine returning a link is not evidence the link is live. The UK FSA's alert pages now return 410 while still appearing in search results. If the page is gone and no live mirror exists, cite the alert reference number in plain text rather than substituting a weaker source — and never cite an aggregator that describes its own pages as automatically generated.
+- **A study only speaks about what it sampled.** Check market, origin, sampling year and commodity form before applying any finding to the product in hand. If the frame does not match, say the study cannot speak to this product.
+- **Separate the question the evidence answers from the question that was asked.** "The manufacturer is a real company with a large farm" answers a legitimacy question and not a contamination question. When you catch yourself reassured by the wrong evidence, name it.
