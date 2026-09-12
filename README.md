@@ -98,6 +98,24 @@ step, the threshold comparison, the recency clock on red verdicts, and the note 
 allergen labelling. Every one of them exists because the first version of the skill got
 something wrong and the checking caught it.
 
+## Disclaimer
+
+This is a research aid, not a safety assessment. It cannot test anything. It summarises records,
+measurements and regulatory thresholds published by other people, any of which may be incomplete,
+outdated or wrong, and it reasons about them with a language model that can make mistakes.
+
+**Nothing it produces is a certification, a laboratory result, or medical, dietary or legal
+advice.** Do not use it to decide whether something is safe to eat. Use it to find out what is on
+the record and which rules apply, then decide for yourself, and consult a professional where it
+matters.
+
+The skill is instructed never to state that a product is unsafe. It reports findings against
+thresholds and names who disagrees. If you republish an output as a claim about a named company,
+that is your act and your responsibility, not the tool's.
+
+Provided as-is, without warranty of any kind, under the MIT licence below. The authors accept no
+liability for any decision taken on the basis of anything it produces.
+
 ## Licence
 
 MIT. See [LICENSE](LICENSE). Take it, adapt it, keep the notice.

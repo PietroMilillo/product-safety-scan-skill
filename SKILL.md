@@ -5,6 +5,22 @@ description: Analyze photos of a food, cosmetic, or household product's packagin
 
 # Product Safety Scan
 
+> **What this produces, and what it does not.** This skill returns a summary of what is publicly
+> findable about a product and what it means against the rules that apply. It is **not** a safety
+> assessment, a certification, a laboratory result, or medical, dietary or legal advice. It cannot
+> test anything. It reports records, measurements and thresholds published by other people, and
+> those can be incomplete, outdated or wrong.
+>
+> **Never state or imply that a product is unsafe to consume.** Report the findings, name the
+> thresholds each one clears or fails, and say who disagrees with whom. The reader draws the
+> conclusion. This is both the honest position and the one that keeps a verdict from becoming an
+> assertion the user would have to defend.
+>
+> A verdict colour is shorthand for what the scan found. It is not a pronouncement about a company,
+> and republishing one as a claim about a named business is the user's own act and the user's own
+> risk.
+
+
 A workflow for turning photos of a product's packaging into a grounded, sourced read on whether to trust it — not a definitive safe/unsafe verdict, but an evidence-based summary the user can act on.
 
 ## Step 0: Read the label
@@ -185,7 +201,21 @@ Default output is a short conversational summary:
 
 Only build a longer structured report/artifact if something is genuinely flagged (a confirmed recall, a real regulatory issue, a plant with credible bad press) or if the user asks for one. Don't produce a report for a clean scan — a paragraph is enough.
 
-## Notes on epistemic care
+## Notes on epistemic care and on what not to assert
+
+**Say what was found, not what it means for safety.** "Lead in this commodity from this region
+averaged 0.89 mg/kg, above the EU ceiling of 0.60 and inside the Chinese limit, with a published
+hazard quotient below 1" is reportable and defensible. "This product is dangerous" is neither, and
+it is the sentence that turns a research summary into a claim somebody may have to answer for.
+
+**Do not allege intent.** No fraud, no cover-up, no "they knew." Nothing in a recall register
+supports a state of mind, and asserting one is the fastest way to turn a true finding into an
+actionable one.
+
+**Attribute every adverse finding to the body that published it**, by name and date, with a link
+that resolves. An accurately repeated public record is very different from a characterisation of
+a company.
+
 
 - This skill produces a "here's what's findable and what it means" summary, not a certification of safety. Say so if asked directly.
 - Never invent a recall, lawsuit, or factory incident. If search comes up empty, that's a real (if weaker) finding — report it as such.
